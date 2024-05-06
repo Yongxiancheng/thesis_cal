@@ -1,0 +1,131 @@
+tolerance 2.0
+output slit300.pdb
+filetype pdb
+structure water.pdb
+  number 3475
+  inside box 0.0 0.0 26 40.0 35 92
+end structure
+structure water.pdb
+  number 3475
+  inside box 0.0 91 26 40.0 123 92
+end structure
+structure water.pdb
+  number 4630
+  inside box 0.0 127.6 46 40.0 232.1 72
+end structure
+structure water.pdb
+  number 3470
+  inside box 0.0 236.5 26 40.0 268 92
+end structure
+structure NA.pdb
+  number 38
+  inside box 0.0 0.0 26 40.0 35 92
+end structure
+structure NA.pdb
+  number 39
+  inside box 0.0 91 26 40.0 123 92
+end structure
+structure NA.pdb
+  number 51
+  inside box 0.0 127.6 46 40.0 232.1 72
+end structure
+structure NA.pdb
+  number 39
+  inside box 0.0 236.5 26 40.0 268 92
+end structure
+structure CL.pdb
+  number 38
+  inside box 0.0 0.0 26 40.0 35 92
+end structure
+structure CL.pdb
+  number 39
+  inside box 0.0 91 26 40.0 123 92
+end structure
+structure CL.pdb
+  number 51
+  inside box 0.0 127.6 46 40.0 232.1 72
+end structure 
+structure CL.pdb
+  number 39
+  inside box 0.0 236.5 26 40.0 268 92
+end structure
+structure N-C12H26.pdb
+  number 8
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure N-C16H34.pdb
+  number 21
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure N-C20H42.pdb
+  number 17
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure N-C23H48.pdb
+  number 9
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure I-C13H28.pdb
+  number 8
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure I-C15H32.pdb
+  number 17
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure I-C19H40.pdb
+  number 8
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure 5ringC14H28.pdb
+  number 11
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure 6ringC13H26.pdb
+  number 33
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure 6ringC16H30.pdb
+  number 27
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure benC13H20.pdb
+  number 27
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure benC17H24.pdb
+  number 5
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure bennalC16H18.pdb
+  number 6
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure bennalC16H20.pdb
+  number 22
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure C21H44S.pdb
+  number 7
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure C21H27N.pdb
+  number 5
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure C10H20O2.pdb
+  number 6
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure C11H20O2.pdb
+  number 26
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure C12H22O2.pdb
+  number 16
+  inside box 0. 36 26 40.0 90 92
+end structure
+structure CO2.pdb
+  number 300
+  inside box 0. 36 26 40.0 90 92
+end structure
