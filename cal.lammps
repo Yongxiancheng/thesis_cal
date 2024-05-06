@@ -1,0 +1,13 @@
+compute peratom all stress/atom NULL
+compute      p all reduce sum c_peratom[1] c_peratom[2] c_peratom[3]
+variable       press equal lz/2*(-(c_p[1]+c_p[2]-2*c_p[3])/vol/4)*1.01325e-2        # interfacial tension:1atom*angstrom=1.01325e-2 mN/m
+
+compute my_press1 all pressure thermo_temp                  # compute pressure include all terms
+compute my_press2 all pressure thermo_temp virial          # compute pressure include all terms expect the kinetic energy ke
+variable my_gamma1 equal lz/2*(c_my_press1[3]-(c_my_press1[1]+c_my_press1[2])/2)*1.01325e-2  # interfacial tension: 1atom*angstrom=1.01325e-2 mN/m
+variable my_gamma2 equal lz/2*(c_my_press2[3]-(c_my_press2[1]+c_my_press2[2])/2)*1.01325e-2  # interfacial tension: 1atom*angstrom=1.01325e-2 mN/m
+
+thermo_style   custom step temp etotal press lz v_press v_my_gamma1 v_my_gamma2
+
+compute zchunk all chunk/atom bin/1d z lower 1.0 #z-chunk-IFT
+fix pressout all ave/chunk 20 10000 200000 zchunk c_atomstress[1] c_atomstress[2] c_atomstress[3] norm none ave one file pressout

@@ -1,0 +1,29 @@
+region block1 block INF INF 5 15 INF INF
+group pore1 dynamic H2O region block1
+
+#com
+compute alltypealkane  alkane chunk/atom type 
+compute alltypeben     ben    chunk/atom type 
+compute alltypenon     non    chunk/atom type 
+compute alltypeoxy     oxy    chunk/atom type 
+compute alltypeoil     oil    chunk/atom type 
+
+compute centeralkane alkane com/chunk  alltypealkane
+compute centerben    ben    com/chunk  alltypeben   
+compute centernon    non    com/chunk  alltypenon   
+compute centeroxy    oxy    com/chunk  alltypeoxy   
+compute centeroil    oil    com/chunk  alltypeoil   
+
+fix y0alkane all ave/time 10000 1 10000 c_centeralkane[*] file ./com/y0alkane mode vector 
+fix y0ben    all ave/time 10000 1 10000 c_centerben[*]    file ./com/y0ben    mode vector 
+fix y0non    all ave/time 10000 1 10000 c_centernon[*]    file ./com/y0non    mode vector 
+fix y0oxy    all ave/time 10000 1 10000 c_centeroxy[*]    file ./com/y0oxy    mode vector 
+fix y0oil    all ave/time 10000 1 10000 c_centeroil[*]    file ./com/y0oil    mode vector 
+
+compute density_dyH2O    H2O    chunk/atom bin/1d y lower 0.2
+fix dyH2O  H2O      ave/chunk 1 1 10000 density_dyH2O      density/mass density/number ave one file ./dyH2O 
+
+fix 2 pore nvt temp 383 383 100.0 
+compute xtemp pore temp/partial 1 0 1
+fix_modify 2 temp xtemp
+fix poreadd pore1 addforce 0 0.00727 0.0 
